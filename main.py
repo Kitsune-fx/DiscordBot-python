@@ -1,9 +1,19 @@
 import discord
+import os
+from discord.ext import commands 
 
-client = discord.Client()
+client = commands.Bot(command_prefix = '$')
 
-@client.event
-async def on_ready():
-    print("I am online master.")
+@client.command()
+async def load(ctx,extension):
+    client.load_extension(f'cogs.{extension}')
 
-client.run('ODcwNjIyNjY3MzgyODc4MjA4.YQPciw.VcdgQChyEEMH6hTrFPBsBV9XFac')
+@client.command()
+async def unload(ctx,extension):
+    client.unload_extension(f'cog.{extension}')
+
+for filename in os.listdir('./cogs'):
+    if filename.endswith('.py'):
+        client.load_extension(f'cogs.{filename[:-3]}')
+
+client.run('')
