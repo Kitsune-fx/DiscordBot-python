@@ -1,4 +1,5 @@
 import discord
+from discord import channel
 from discord.ext import commands
 
 client = commands.Bot(command_prefix = '$')
@@ -14,6 +15,11 @@ class Music(commands.Cog) :
         channel = ctx.author.voice.channel
         await ctx.send(f'Joined {channel}')
         await channel.connect()
+
+    @commands.command(pass_context = True)
+    async def leave(self,ctx):
+        await ctx.send(f'Leaved bye!')
+        await ctx.voice_client.disconnect()
 
 
 
