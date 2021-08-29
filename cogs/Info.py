@@ -1,10 +1,6 @@
 from os import name
-from typing import Optional
 import discord
-from discord import client
-from discord import guild
 from discord.ext import commands
-from discord.member import Member
 
 class Info(commands.Cog):
     
