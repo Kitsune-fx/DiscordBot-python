@@ -10,7 +10,18 @@ class Info(commands.Cog):
     #command
     @commands.command()
     async def serverinfo(self,ctx):
-        await ctx.send(f'Server name: {ctx.guild.name} \nServer id: {ctx.guild.id} \nMember count: {ctx.guild.member_count} members')
+        serverName = ctx.guild.name
+        serverId = ctx.guild.id
+        memCount = ctx.guild.member_count
+        mbed = discord.Embed(
+            color = discord.Colour(0xffff),
+            title = f'Server Info'
+        )
+        mbed.add_field(name='Server Name',value=f'{serverName}',inline=False)
+        mbed.add_field(name='Server id',value=f'{serverId}',inline=False)
+        mbed.add_field(name='Member Count',value=f'{memCount} ',inline=False)
+        mbed.set_image(url=f'{ctx.guild.icon_url}')
+        await ctx.send(embed = mbed)
 
     @commands.command()
     async def myinfo(self,ctx):
