@@ -18,6 +18,7 @@ async def on_command_error(ctx, error):
     if isinstance(error,commands.CommandNotFound):
         await ctx.send("I don't understand the order master.")
 
+
 #command
 @client.command()
 async def load(ctx,extension):

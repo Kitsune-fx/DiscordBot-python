@@ -3,5 +3,5 @@ Practice how to use Discord.py and Python language
 
 ## Next Goal
 - Make Music Bot
-- Show top 10 Thailand's Vtuber list
-- Make notification Bot?
+- Show top Vtuber list? (practice to use JSON)
+- Make notification Bot? 

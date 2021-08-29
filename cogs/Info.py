@@ -1,4 +1,3 @@
-from os import name
 import discord
 from discord.ext import commands
 
@@ -29,6 +28,9 @@ class Info(commands.Cog):
             color = discord.Colour(0xffff),
             title = f"{ctx.author}" 
         )
+        mbed.add_field(name="Display name" ,value=f'{ctx.author.display_name}',inline=True)
+        mbed.add_field(name="#" ,value=f'{ctx.author.discriminator}',inline=True)
+        mbed.add_field(name="Since" ,value=f'{ctx.author.created_at}',inline=False)
         mbed.set_image(url=f'{ctx.author.avatar_url}')
         
         await ctx.send(embed = mbed)
