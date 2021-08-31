@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 from discord.utils import get
-from discord import FFmpegPCMAudio
+from discord import FFmpegPCMAudio, PCMVolumeTransformer
 from youtube_dl import YoutubeDL
 import pafy
 
@@ -38,12 +38,11 @@ class Music(commands.Cog) :
         else : 
             await voice_client.move_to(channel)
         
-        song = pafy.new('https://www.youtube.com/watch?v=bii_qfFs6f0')
-        
+        song = pafy.new(url)
+        await ctx.send(song)
         audio = song.getbestaudio()
-        await ctx.send(audio)
-        await ctx.send(audio.url)
         source = FFmpegPCMAudio(audio.url , **FFMPEG_OPTIONS)
+        await ctx.send(source)
         voice_client.play(source)
 
 
