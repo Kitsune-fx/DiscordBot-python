@@ -1,8 +1,6 @@
 import discord
 from discord.ext import commands
-from discord.utils import get
-from discord import FFmpegPCMAudio, PCMVolumeTransformer
-from youtube_dl import YoutubeDL
+from discord import FFmpegPCMAudio
 import pafy
 
 client = commands.Bot(command_prefix = '$')
@@ -31,6 +29,7 @@ class Music(commands.Cog) :
             "before_options": "-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5",
             'option' : '-vn'    
         }
+
         voice = discord.utils.get(ctx.guild.voice_channels, name=channel.name)
         voice_client = discord.utils.get(self.client.voice_clients, guild=ctx.guild)
         if voice_client == None:
@@ -39,11 +38,11 @@ class Music(commands.Cog) :
             await voice_client.move_to(channel)
         
         song = pafy.new(url)
-        await ctx.send(song)
         audio = song.getbestaudio()
-        source = FFmpegPCMAudio(audio.url , **FFMPEG_OPTIONS)
-        await ctx.send(source)
-        voice_client.play(source)
+        await ctx.send("Master I can't play a music for you." )
+        # source = await FFmpegPCMAudio(audio.url,**FFMPEG_OPTIONS)
+        #FFmpeg cant work idk HOW and WHY I'll try to fix it later lol  
+        # voice_client.play(source) 
 
 
 

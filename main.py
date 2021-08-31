@@ -1,13 +1,10 @@
 import discord
 import os
 from discord.ext import commands
-from discord.utils import get
-from discord import FFmpegPCMAudio
-from youtube_dl import YoutubeDL
 
 
 #Put your token down here.
-token = ''
+token = 'ODcwNjIyNjY3MzgyODc4MjA4.YQPciw.xmIWWCdSz4qIjOYePnG40LU88fA'
 
 client = commands.Bot(command_prefix = '$')
 
