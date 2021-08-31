@@ -3,6 +3,7 @@ import os
 from discord.ext import commands
 from discord.utils import get
 from discord import FFmpegPCMAudio
+from youtube_dl import YoutubeDL
 
 
 #Put your token down here.
