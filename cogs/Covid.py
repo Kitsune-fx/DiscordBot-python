@@ -1,4 +1,5 @@
 import discord
+from discord import message
 from discord.ext import commands
 import requests
 import json 
@@ -13,7 +14,8 @@ def get_covid() :
     totalRecover = r_dict[0]['total_recovered']
     return_result = f"Date: {date} \nNew case: {newCase}   Total case: {totalCase}\nTotal death: {totalDeath} Total recover: {totalRecover} "
     return return_result
-    
+
+
 
 
 class CovidStatus(commands.Cog):

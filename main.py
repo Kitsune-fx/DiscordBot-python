@@ -4,7 +4,7 @@ from discord.ext import commands
 
 
 #Put your token down here.
-token = ''
+token = 'ODcwNjIyNjY3MzgyODc4MjA4.YQPciw.pytoRob2SUUxAMpO28sv9iHxUDg'
 
 client = commands.Bot(command_prefix = '$')
 
