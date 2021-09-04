@@ -1,5 +1,4 @@
 import discord
-from discord import message
 from discord.ext import commands
 import requests
 import json 
@@ -16,8 +15,6 @@ def get_covid() :
     return return_result
 
 
-
-
 class CovidStatus(commands.Cog):
 
     def __init__(self,client):
@@ -28,7 +25,6 @@ class CovidStatus(commands.Cog):
     async def Covidtoday(self,ctx):
         message = get_covid() 
         await ctx.send(message)
-
 
 def setup(client):
     client.add_cog(CovidStatus(client))
