@@ -45,5 +45,10 @@ class Info(commands.Cog):
     
         await ctx.send(embed = mbed)
 
+    @commands.command()
+    async def creator(self,ctx):
+        message = "Master Iori created me. \n Here is his github: https://github.com/Kitsune-fx "
+        await ctx.send(message)
+
 def setup(client):
     client.add_cog(Info(client))
